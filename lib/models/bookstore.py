@@ -147,7 +147,7 @@ class Bookstore:
 
     @classmethod
     def find_by_id(cls, id):
-        """ Return a Bookstore object corresponding to the table row matching
+        """ Return a Bookstore object corresponding to the first table row matching
         the specified primary key """
 
         sql = """
@@ -159,5 +159,18 @@ class Bookstore:
         row = CURSOR.execute(sql, (id,)).fetchone()
         return cls.instance_from_db(row) if row else None
     
-    
+    @classmethod
+    def find_by_name(cls, name):
+        """ Return a Bookstore object corresponding to the first table row matching
+        the specified name """
+
+        sql = """
+            SELECT *
+            FROM bookstores
+            WHERE name = ?
+        """
+
+        row = CURSOR.execute(sql, (name,))
+        return cls.instance_from_db(row) if row else None
+
     

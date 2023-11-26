@@ -24,3 +24,15 @@ class Bookstore:
         if not len(name):
             raise Exception
         self._name = name
+    
+    @property
+    def location(self):
+        return self._location
+    
+    @location.setter
+    def location(self, location):
+        if not isinstance(location, str):
+            raise Exception
+        if not len(location):
+            raise Exception
+        self._location = location

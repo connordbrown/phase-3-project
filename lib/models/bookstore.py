@@ -10,3 +10,6 @@ class Bookstore:
         self.location = location
         self.id = id
     
+    def __repr__(self):
+        return f"<Bookstore b{self.id}: {self.name}, {self.location}>"
+

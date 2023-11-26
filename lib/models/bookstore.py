@@ -89,7 +89,7 @@ class Bookstore:
         """ Update the table row corresponding to the current Bookstore instance """
 
         sql = """
-            UPDATE departments
+            UPDATE bookstores
             SET name = ?, location = ?
             WHERE id = ?
         """
@@ -97,3 +97,21 @@ class Bookstore:
         CURSOR.execute(sql, (self.name, self.location, self.id))
         CONN.commit()
 
+    def delete(self):
+        """ Delete the table row and dictionary entry corresponding to the
+        current bookstore instance and reassign id attribute """
+
+        sql = """
+            DELETE FROM bookstores
+            WHERE id = ?
+        """
+
+        CURSOR.execute(sql, (self.id,))
+        CONN.commit()
+
+        # delete dictionary entry using id as key
+        del type(self).all[self.id]
+         
+        # set the id to None
+        self.id = None
+    

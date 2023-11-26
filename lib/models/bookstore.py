@@ -11,7 +11,7 @@ class Bookstore:
         self.id = id
     
     def __repr__(self):
-        return f"<Bookstore b{self.id}: {self.name}, {self.location}>"
+        return f"<Bookstore {self.id}: {self.name}, {self.location}>"
 
     @property
     def name(self):
@@ -173,4 +173,14 @@ class Bookstore:
         row = CURSOR.execute(sql, (name,))
         return cls.instance_from_db(row) if row else None
 
-    
+    #def books(self):
+        #""" Return list of books associated to current bookstore """
+        #from book import Book
+        #sql = """
+        #    SELECT *
+        #    FROM books
+        #    WHERE bookstore_id = ?
+        #"""
+
+        #rows = CURSOR.execute(sql, (self.id,)).fetchall()
+        #return [Book.instance_from_db(row) for row in rows]

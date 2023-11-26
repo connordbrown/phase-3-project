@@ -132,4 +132,18 @@ class Bookstore:
             cls.all[bookstore.id] = bookstore
         return bookstore
     
+    @classmethod
+    def get_all(cls):
+        """ Return a list of Bookstore objects for each row in table """
+
+        sql = """
+            SELECT *
+            FROM bookstores
+        """
+
+        rows = CURSOR.execute(sql).fetchall()
+
+        return [cls.instance_from_db(row) for row in rows] 
+
+
     

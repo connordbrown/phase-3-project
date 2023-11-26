@@ -11,7 +11,7 @@ class Bookstore:
         self.id = id
     
     def __repr__(self):
-        return f"<Bookstore {self.id}: {self.name}, {self.location}>"
+        return f"<Bookstore #{self.id}: {self.name}, {self.location}>"
 
     @property
     def name(self):

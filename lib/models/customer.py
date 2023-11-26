@@ -36,3 +36,19 @@ class Customer:
         if not len(last_name):
             raise Exception
         self._last_name = last_name
+    
+    @classmethod
+    def create_table(cls):
+        """ Create a new table to persist attributes of Customer instances """
+
+        sql = """
+            CREATE TABLE IF NOT EXISTS customers
+            id INTEGER PRIMARY KEY
+            first_name TEXT,
+            last_name TEXT
+        """
+
+        CURSOR.execute(sql)
+        CONN.commit()
+    
+    

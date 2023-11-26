@@ -36,3 +36,26 @@ class Bookstore:
         if not len(location):
             raise Exception
         self._location = location
+    
+    @classmethod
+    def create_table(cls):
+        """ Create a new table to persist the attributes of Bookstore instances """
+
+        sql = """
+            CREATE TABLE IF NOT EXISTS bookstores (
+            id INTEGER PRIMARY KEY,
+            name TEXT,
+            location TEXT)
+        """
+        CURSOR.execute(sql)
+        CONN.commit()
+    
+    @classmethod
+    def drop_table(cls):
+        """ Drop the table that persists Bookstore instances """
+
+        sql = """
+            DROP TABLE IF EXISTS departments;
+        """
+        CURSOR.execute(sql)
+        CONN.commit()

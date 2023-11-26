@@ -115,3 +115,21 @@ class Bookstore:
         # set the id to None
         self.id = None
     
+    @classmethod
+    def instance_from_db(cls, row):
+        """ Return a Bookstore object having attribute values from its table row """
+
+        # check dictionary for existing instance using row's primary key
+        bookstore = cls.all.get(row[0])
+        if bookstore:
+            # ensure attributes match row values in case local instance modified
+            bookstore.name = row[1]
+            bookstore.location = row[2]
+        else:
+            # not in dictionary, create new instance and add to dictionary
+            bookstore = cls(row[1], row[2])
+            bookstore.id = row[0]
+            cls.all[bookstore.id] = bookstore
+        return bookstore
+    
+    

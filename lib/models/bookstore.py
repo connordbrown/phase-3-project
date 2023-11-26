@@ -55,7 +55,7 @@ class Bookstore:
         """ Drop the table that persists Bookstore instances """
 
         sql = """
-            DROP TABLE IF EXISTS departments;
+            DROP TABLE IF EXISTS bookstores;
         """
         CURSOR.execute(sql)
         CONN.commit()
@@ -76,3 +76,24 @@ class Bookstore:
         # update id attribute, save instance to class dictionary
         self.id = CURSOR.lastrowid
         type(self).all[self.id] = self
+    
+    @classmethod
+    def create(cls, name, location):
+        """ Initialize a new Bookstore instance and save object to database """
+
+        bookstore = cls(name, location)
+        bookstore.save()
+        return bookstore
+    
+    def update(self):
+        """ Update the table row corresponding to the current Bookstore instance """
+
+        sql = """
+            UPDATE departments
+            SET name = ?, location = ?
+            WHERE id = ?
+        """
+
+        CURSOR.execute(sql, (self.name, self.location, self.id))
+        CONN.commit()
+

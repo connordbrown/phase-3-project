@@ -62,4 +62,19 @@ class Customer:
         CURSOR.execute(sql)
         CONN.commit()
 
-    
+    def save(self):
+        """ Insert new row with first_name and last_name values of current Customer instance.
+        Update object id attribute using primary key value of new row. Save object in class
+        dictionary 'all' using table row's primary key as dictionary key """
+
+        sql = """
+            INSERT INTO customers (first_name, last_name)
+            VALUES (?, ?)
+        """
+
+        CURSOR.execute(sql, (self.first_name, self.last_name))
+        CONN.commit()
+
+        self.id = CURSOR.lastrowid
+        type(self).all[self.id] = self
+

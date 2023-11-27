@@ -116,3 +116,20 @@ class Customer:
 
         # set id to None
         self.id = None
+    
+    @classmethod
+    def instance_from_db(cls, row):
+        """ Return a Customer object having attribute values from its table row """
+
+        # check dictionary for existing instance using row's primary key
+        customer = cls.all.get(row[0])
+        if customer:
+            # ensure attributes match row values in case local instance modified
+            customer.first_name = row[1]
+            customer.last_name = row[2]
+        else:
+            # not in dictionary, create new instance and add to dictionary
+            customer = cls(row[1], row[2])
+            customer.id = row[0]
+            cls.all[customer.id] = customer
+        return customer

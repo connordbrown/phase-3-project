@@ -150,7 +150,7 @@ class Customer:
     @classmethod
     def find_by_id(cls, id):
         """ Return a Customer object corresponding to the first table row matching
-         the specified primary key """
+        the specified primary key """
 
         sql = """
             SELECT *
@@ -162,4 +162,18 @@ class Customer:
         
         return cls.instance_from_db(row) if row else None
     
-    
+    @classmethod
+    def find_by_last_name(cls, last_name):
+        """ Return a Customer object corresponding to the first table row matching
+        specified last name """
+                
+        sql = """
+            SELECT *
+            FROM customers
+            WHERE last_name = ?
+        """
+
+        row = CURSOR.execute(sql, (last_name,)).fetchone()
+
+        return cls.instance_from_db(row) if row else None
+        

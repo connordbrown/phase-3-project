@@ -98,3 +98,21 @@ class Customer:
 
         CURSOR.execute(sql, (self.first_name, self.last_name, self.id))
         CONN.commit()
+    
+    def delete(self):
+        """ Delete table row and dictionary entry corresponding to 
+        current Customer instance and reassign id attribute """
+
+        sql = """
+            DELETE FROM customers
+            WHERE id = ?
+        """
+
+        CURSOR.execute(sql, (self.id,))
+        CONN.commit()
+
+        # delete dictionary entry using id as key
+        del type(self).all[self.id]
+
+        # set id to None
+        self.id = None

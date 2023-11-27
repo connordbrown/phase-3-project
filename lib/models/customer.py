@@ -78,3 +78,23 @@ class Customer:
         self.id = CURSOR.lastrowid
         type(self).all[self.id] = self
 
+    @classmethod
+    def create(cls, first_name, last_name):
+        """ Initialize a new Customer instance and save the object to the datebase
+            return: customer (Customer object) """
+
+        customer = cls(first_name, last_name)
+        customer.save()
+        return customer
+
+    def update(self):
+        """ Update table row corresponding to current Customer instance """
+
+        sql = """
+            UPDATE customers
+            SET first_name = ?, last_name = ?
+            WHERE id = ?
+        """
+
+        CURSOR.execute(sql, (self.first_name, self.last_name, self.id))
+        CONN.commit()

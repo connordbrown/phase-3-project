@@ -79,7 +79,8 @@ class Bookstore:
     
     @classmethod
     def create(cls, name, location):
-        """ Initialize a new Bookstore instance and save object to database """
+        """ Initialize a new Bookstore instance and save object to database.
+        return: bookstore (Bookstore object) """
 
         bookstore = cls(name, location)
         bookstore.save()

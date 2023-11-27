@@ -133,3 +133,18 @@ class Customer:
             customer.id = row[0]
             cls.all[customer.id] = customer
         return customer
+
+    @classmethod
+    def get_all(cls):
+        """ Return a list of Customer objects for each row in table """
+        
+        sql = """
+            SELECT *
+            FROM customers
+        """
+
+        rows = CURSOR.execute(sql).fetchall()
+        
+        return [cls.instance_from_db(row) for row in rows]
+    
+    

@@ -176,4 +176,16 @@ class Customer:
         row = CURSOR.execute(sql, (last_name,)).fetchone()
 
         return cls.instance_from_db(row) if row else None
+    
+    #def books(self):
+        #""" Return list of books associated with current customer """
+        #from book import Book
+        #sql = """
+        #    SELECT *
+        #    FROM books
+        #    WHERE customer_id = ?
+        #"""
+
+        #rows = CURSOR.execute(sql, (self.id,)).fetchall()
+        #return [Customer.instance_from_db(row) for row in rows]
         

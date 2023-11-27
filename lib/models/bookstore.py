@@ -173,11 +173,11 @@ class Bookstore:
         """
 
         row = CURSOR.execute(sql, (name,))
-        
+
         return cls.instance_from_db(row) if row else None
 
     #def books(self):
-        #""" Return list of books associated to current bookstore """
+        #""" Return list of books associated with current bookstore """
         #from book import Book
         #sql = """
         #    SELECT *

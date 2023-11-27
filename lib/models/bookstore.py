@@ -158,6 +158,7 @@ class Bookstore:
         """
 
         row = CURSOR.execute(sql, (id,)).fetchone()
+
         return cls.instance_from_db(row) if row else None
     
     @classmethod
@@ -172,6 +173,7 @@ class Bookstore:
         """
 
         row = CURSOR.execute(sql, (name,))
+        
         return cls.instance_from_db(row) if row else None
 
     #def books(self):

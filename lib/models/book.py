@@ -32,3 +32,29 @@ class Book:
             raise Exception
         self._title = title
     
+    @property
+    def author(self):
+        return self._author
+    
+    @author.setter
+    def author(self, author):
+        if not isinstance(author, str):
+            raise Exception
+        if not len(author):
+            raise Exception
+        self._author = author
+    
+    @property
+    def bookstore_id(self):
+        return self._bookstore_id
+    
+    @bookstore_id.setter
+    def bookstore_id(self, bookstore_id):
+        if not isinstance(bookstore_id, int):
+            raise Exception
+        if not Bookstore.find_by_id(bookstore_id):
+            raise Exception
+        self._bookstore_id = bookstore_id
+    
+    
+    

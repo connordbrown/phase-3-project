@@ -56,5 +56,15 @@ class Book:
             raise Exception
         self._bookstore_id = bookstore_id
     
+    @property
+    def customer_id(self):
+        return self._customer_id
     
+    @customer_id.setter
+    def customer_id(self, customer_id):
+        if not isinstance(customer_id, int):
+            raise Exception
+        if not Customer.find_by_id(customer_id):
+            raise Exception
+        self._customer_id = customer_id
     

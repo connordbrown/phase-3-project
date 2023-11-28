@@ -112,3 +112,17 @@ class Book:
 
         self.id = CURSOR.lastrowid
         type(self).all[self.id] = self
+
+    def update(self):
+        """ Update the table row corresponding to the current Book instance """
+
+        sql = """
+            UPDATE books
+            SET title = ?, author = ?, bookstore_id = ?, customer_id = ?
+            WHERE id = ?
+        """
+
+        CURSOR.execute(sql, (self.title, self.author, self.bookstore_id, self.customer_id, self.id))
+        CONN.commit()
+    
+    

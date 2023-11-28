@@ -125,4 +125,22 @@ class Book:
         CURSOR.execute(sql, (self.title, self.author, self.bookstore_id, self.customer_id, self.id))
         CONN.commit()
     
+    def delete(self):
+        """ Delete the table row corresponding to the current Book instance,
+        delete the dictionary key, and reassign id attribute """
+
+        sql = """
+            DELETE FROM books
+            WHERE id = ?
+        """
+
+        CURSOR.execute(sql, (self.id,))
+        CONN.commit()
+
+        # delete dictionary entry using id as key
+        del type(self).all[self.id]
+
+        # set the id to None
+        self.id = None
+    
     

@@ -19,3 +19,16 @@ class Book:
             f"<Book #{self.id}: {self.title}, by {self.author}, " +
             f"Bookstore ID: {self.bookstore_id}, Customer ID: {self.customer_id}>" 
         )
+    
+    @property
+    def title(self):
+        return self._name
+    
+    @title.setter
+    def title(self, title):
+        if not isinstance(title, str):
+            raise Exception
+        if not len(title):
+            raise Exception
+        self._title = title
+    

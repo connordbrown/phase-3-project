@@ -64,7 +64,7 @@ class Customer:
 
     def save(self):
         """ Insert new row with first_name and last_name values of current Customer instance.
-        Update object id attribute using primary key value of new row. Save object in class
+        Update current object id attribute using primary key value of new row. Save object in class
         dictionary 'all' using table row's primary key as dictionary key """
 
         sql = """

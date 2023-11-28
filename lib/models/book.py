@@ -97,3 +97,18 @@ class Book:
         CURSOR.execute(sql)
         CONN.commit()
     
+    def save(self):
+        """ Insert new row with title, author, bookstore_id and customer_id values of current 
+        Customer instance. Update current object id attribute using primary key value of new row. Save object in class
+        dictionary 'all' using table row's primary key as dictionary key """
+
+        sql = """
+            INSERT INTO books (title, author, bookstore_id, customer_id)
+            VALUES (?, ?, ?, ?)
+        """
+
+        CURSOR.execute(sql, (self.title, self.author, self.bookstore_id, self.customer_id))
+        CONN.commit()
+
+        self.id = CURSOR.lastrowid
+        type(self).all[self.id] = self

@@ -62,7 +62,7 @@ class Bookstore:
 
     def save(self):
         """ Insert a new row with the name and location values of current Bookstore instance.
-            Update object id attribute using primary key value of new row. Save object in class
+            Update current object id attribute using primary key value of new row. Save object in class
             dictionary 'all' using table row's primary key as dictionary key """
 
         sql = """

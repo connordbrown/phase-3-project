@@ -68,3 +68,23 @@ class Book:
             raise Exception
         self._customer_id = customer_id
     
+    @classmethod
+    def create_table(cls):
+        """ Create a new table to presist the attributes of Book instances """
+        
+        sql = """
+            CREATE TABLE IF NOT EXISTS books (
+            id INTEGER PRIMARY KEY,
+            title TEXT,
+            author TEXT,
+            bookstore_id INTEGER,
+            FOREIGN KEY (bookstore_id) REFERENCES bookstores(id),
+            customer_id INTEGER,
+            FOREIGN KEY (customer_id) REFERENCES customers(id))
+        """
+
+        CURSOR.execute(sql)
+        CONN.commit()
+    
+    
+    

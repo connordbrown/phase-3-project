@@ -131,7 +131,7 @@ class Bookstore:
             bookstore = cls(row[1], row[2])
             bookstore.id = row[0]
             cls.all[bookstore.id] = bookstore
-            
+
         return bookstore
     
     @classmethod
@@ -177,14 +177,14 @@ class Bookstore:
 
         return cls.instance_from_db(row) if row else None
 
-    #def books(self):
-        #""" Return list of books associated with current bookstore """
-        #from book import Book
-        #sql = """
-        #    SELECT *
-        #    FROM books
-        #    WHERE bookstore_id = ?
-        #"""
+    def books(self):
+        """ Return list of books associated with current bookstore """
+        from book import Book
+        sql = """
+            SELECT *
+            FROM books
+            WHERE bookstore_id = ?
+        """
 
-        #rows = CURSOR.execute(sql, (self.id,)).fetchall()
-        #return [Book.instance_from_db(row) for row in rows]
+        rows = CURSOR.execute(sql, (self.id,)).fetchall()
+        return [Book.instance_from_db(row) for row in rows]

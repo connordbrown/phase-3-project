@@ -215,8 +215,8 @@ class Book:
         return cls.instance_from_db(row) if row else None
 
     def customer_bookstores(self):
-        """ Return a list of Bookstore objects and
-        their associated Customer objects for current Book object """
+        """ Return a list of tuples of Bookstore objects and
+        their associated Customer objects for current instance """
 
         bookstores = [bookstore for bookstore in Bookstore.get_all() if bookstore.id == self.bookstore_id]
         customers = [customer for customer in Customer.get_all() if customer.id == self.customer_id]

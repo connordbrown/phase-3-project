@@ -201,7 +201,7 @@ class Book:
     
     @classmethod
     def find_by_title(cls, title):
-        """Return Book object corresponding to the first table row matching
+        """ Return Book object corresponding to the first table row matching
         the specified title """
 
         sql = """
@@ -214,4 +214,11 @@ class Book:
 
         return cls.instance_from_db(row) if row else None
 
-    
+    def customer_bookstores(self):
+        """ Return a list of Bookstore objects and
+        their associated Customer objects for current Book object """
+
+        bookstores = [bookstore for bookstore in Bookstore.get_all() if bookstore.id == self.bookstore_id]
+        customers = [customer for customer in Customer.get_all() if customer.id == self.customer_id]
+
+        return list(zip(bookstores, customers))

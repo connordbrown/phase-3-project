@@ -132,6 +132,7 @@ class Customer:
             customer = cls(row[1], row[2])
             customer.id = row[0]
             cls.all[customer.id] = customer
+            
         return customer
 
     @classmethod

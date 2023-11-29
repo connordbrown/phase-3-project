@@ -131,6 +131,7 @@ class Bookstore:
             bookstore = cls(row[1], row[2])
             bookstore.id = row[0]
             cls.all[bookstore.id] = bookstore
+            
         return bookstore
     
     @classmethod

@@ -168,4 +168,20 @@ class Book:
             book = cls(row[1], row[2], row[3], row[4])
             book.id = row[0]
             cls.all[book.id] = book
+
         return book
+
+    @classmethod
+    def get_all(cls):
+        """ Return a list of Book objects for each row in table """
+        
+        sql = """
+            SELECT *
+            FROM books
+        """
+
+        rows = CURSOR.execute(sql).fetchall()
+
+        return [cls.instance_from_db(row) for row in rows]
+
+    

@@ -151,5 +151,21 @@ class Book:
         employee.save()
         return employee
 
-    
-    
+    @classmethod
+    def instance_from_db(cls, row):
+        """ Return a Book object having the attribute values from its table row """
+
+        # check dictionary for existing instance using row's primary key
+        book = cls.all.get(row[0])
+        if book:
+            # ensure attributes match row values in case local instance was modified
+            book.title = row[1]
+            book.author = row[2]
+            book.bookstore_id = row[3]
+            book.customer_id = row[4]
+        else:
+            # not in dictionary, create new instance and add to dictionary
+            book = cls(row[1], row[2], row[3], row[4])
+            book.id = row[0]
+            cls.all[book.id] = book
+        return book

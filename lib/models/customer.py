@@ -155,7 +155,7 @@ class Customer:
 
         sql = """
             SELECT *
-            FROM customer
+            FROM customers
             WHERE id = ?
         """
 
@@ -180,7 +180,7 @@ class Customer:
     
     def books(self):
         """ Return list of books associated with current customer """
-        from books import Book
+        from models.book import Book
         sql = """
             SELECT *
             FROM books

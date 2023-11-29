@@ -179,7 +179,7 @@ class Bookstore:
 
     def books(self):
         """ Return list of books associated with current bookstore """
-        from book import Book
+        from models.book import Book
         sql = """
             SELECT *
             FROM books

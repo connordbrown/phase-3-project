@@ -19,6 +19,13 @@ def reset_database():
     Bookstore.create("Borders", "Superior")
     Bookstore.create("Read Queen", "Lafayette")
 
+    Customer.create("James", "Jameson")
+    Customer.create("Dick", "Dickens")
+    Customer.create("John", "Johnson")
+    Customer.create("Wendy", "Williams")
+    Customer.create("Sarah", "Summers")
+    Customer.create("Emma", "Emsworth")
+
 
 
 reset_database()

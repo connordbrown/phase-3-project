@@ -143,4 +143,13 @@ class Book:
         # set the id to None
         self.id = None
     
+    @classmethod
+    def create(cls, title, author, bookstore_id, customer_id):
+        """ Initialize a new Book instance and save the object to the database """
+
+        employee = cls(title, author, bookstore_id, customer_id)
+        employee.save()
+        return employee
+
+    
     

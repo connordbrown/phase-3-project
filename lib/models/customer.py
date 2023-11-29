@@ -1,4 +1,4 @@
-from __init__ import CURSOR, CONN
+from models.__init__ import CURSOR, CONN
 
 class Customer:
 
@@ -42,10 +42,10 @@ class Customer:
         """ Create a new table to persist attributes of Customer instances """
 
         sql = """
-            CREATE TABLE IF NOT EXISTS customers
-            id INTEGER PRIMARY KEY
+            CREATE TABLE IF NOT EXISTS customers (
+            id INTEGER PRIMARY KEY,
             first_name TEXT,
-            last_name TEXT
+            last_name TEXT)
         """
 
         CURSOR.execute(sql)

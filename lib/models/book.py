@@ -1,6 +1,6 @@
-from __init__ import CURSOR, CONN
-from bookstore import Bookstore
-from customer import Customer
+from models.__init__ import CURSOR, CONN
+from models.bookstore import Bookstore
+from models.customer import Customer
 
 class Book:
 
@@ -78,8 +78,8 @@ class Book:
             title TEXT,
             author TEXT,
             bookstore_id INTEGER,
-            FOREIGN KEY (bookstore_id) REFERENCES bookstores(id),
             customer_id INTEGER,
+            FOREIGN KEY (bookstore_id) REFERENCES bookstores(id),
             FOREIGN KEY (customer_id) REFERENCES customers(id))
         """
 

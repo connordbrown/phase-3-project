@@ -1,4 +1,4 @@
-from __init__ import CURSOR, CONN
+from models.__init__ import CURSOR, CONN
 
 class Bookstore:
 
@@ -173,7 +173,7 @@ class Bookstore:
             WHERE name = ?
         """
 
-        row = CURSOR.execute(sql, (name,))
+        row = CURSOR.execute(sql, (name,)).fetchone()
 
         return cls.instance_from_db(row) if row else None
 

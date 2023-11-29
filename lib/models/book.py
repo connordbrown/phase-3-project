@@ -199,4 +199,19 @@ class Book:
 
         return cls.instance_from_db(row) if row else None
     
+    @classmethod
+    def find_by_title(cls, title):
+        """Return Book object corresponding to the first table row matching
+        the specified title """
+
+        sql = """
+            SELECT *
+            FROM books
+            WHERE title = ?
+        """
+
+        row = CURSOR.execute(sql, (title,)).fetchone()
+
+        return cls.instance_from_db(row) if row else None
+
     

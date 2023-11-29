@@ -132,7 +132,7 @@ class Customer:
             customer = cls(row[1], row[2])
             customer.id = row[0]
             cls.all[customer.id] = customer
-            
+
         return customer
 
     @classmethod
@@ -166,7 +166,7 @@ class Customer:
     @classmethod
     def find_by_last_name(cls, last_name):
         """ Return a Customer object corresponding to the first table row matching
-        specified last name """
+        the specified last name """
                 
         sql = """
             SELECT *

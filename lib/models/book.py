@@ -22,7 +22,7 @@ class Book:
     
     @property
     def title(self):
-        return self._name
+        return self._title
     
     @title.setter
     def title(self, title):
@@ -147,9 +147,9 @@ class Book:
     def create(cls, title, author, bookstore_id, customer_id):
         """ Initialize a new Book instance and save the object to the database """
 
-        employee = cls(title, author, bookstore_id, customer_id)
-        employee.save()
-        return employee
+        book = cls(title, author, bookstore_id, customer_id)
+        book.save()
+        return book
 
     @classmethod
     def instance_from_db(cls, row):
@@ -214,11 +214,9 @@ class Book:
 
         return cls.instance_from_db(row) if row else None
 
-    def customer_bookstores(self):
-        """ Return a list of tuples of Bookstore objects and
-        their associated Customer objects for current instance """
+    @classmethod
+    def customer_bookstores(cls):
+        """ Return a list of tuples of books and their associated Bookstore
+        and Customer objects. Can be used to track where customers are buying their books. """
 
-        bookstores = [bookstore for bookstore in Bookstore.get_all() if bookstore.id == self.bookstore_id]
-        customers = [customer for customer in Customer.get_all() if customer.id == self.customer_id]
-
-        return list(zip(bookstores, customers))
+        return [(book.title, Bookstore.find_by_id(book.bookstore_id), Customer.find_by_id(book.customer_id)) for book in cls.get_all()]

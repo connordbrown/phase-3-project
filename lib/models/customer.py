@@ -179,7 +179,7 @@ class Customer:
         return cls.instance_from_db(row) if row else None
     
     def books(self):
-        """ Return list of books associated with current customer """
+        """ Return list of books associated with current Customer object """
         from models.book import Book
         sql = """
             SELECT *

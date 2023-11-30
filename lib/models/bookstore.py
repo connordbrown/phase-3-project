@@ -178,7 +178,7 @@ class Bookstore:
         return cls.instance_from_db(row) if row else None
 
     def books(self):
-        """ Return list of books associated with current bookstore """
+        """ Return list of books associated with current Bookstore object """
         from models.book import Book
         sql = """
             SELECT *

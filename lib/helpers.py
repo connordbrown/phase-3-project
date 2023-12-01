@@ -39,7 +39,7 @@ def update_book():
     try:
         book_id = int(input("Enter the book's id: "))
     except Exception as exc:
-        print("Error", exc)
+        print("Error:", exc)
 
     if book := Book.find_by_id(book_id):
         try:
@@ -58,5 +58,20 @@ def update_book():
             print("Error updating book:", exc)
     else:
         print(f"Book #{book_id} not found")
+
+def delete_book():
+    try:
+        book_id = int(input("Enter the book's id: "))
+    except Exception as exc:
+        print(f"Error:", exc)
+        
+    if book := Book.find_by_id(book_id):
+        book.delete()
+        print(f"Book {book_id} deleted")
+    else:
+        print(f"Book #{book_id} not found")
+    
+
+
 ### bookstore functions ###
 ### customer functions ###

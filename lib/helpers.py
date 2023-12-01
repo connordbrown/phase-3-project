@@ -70,7 +70,7 @@ def delete_book():
 
     if book := Book.find_by_id(book_id):
         book.delete()
-        print(f"Book {book_id} deleted")
+        print(f"Book #{book_id} deleted")
     else:
         print(f"Book #{book_id} not found")
 
@@ -119,4 +119,18 @@ def update_bookstore():
     else:
         print(f"Bookstore #{bookstore_id} not found")
 
+def delete_bookstore():
+    try:
+        bookstore_id = int(input("Enter the bookstore id: "))
+    except Exception as exc:
+        print(f"Error:", exc)
+
+    if bookstore := Bookstore.find_by_id(bookstore_id):
+        bookstore.delete()
+        print(f"Bookstore #{bookstore_id} deleted")
+    else:
+        print(f"Bookstore #{bookstore_id} not found")
+
 ### customer functions ###
+
+

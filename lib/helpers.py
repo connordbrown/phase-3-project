@@ -19,6 +19,10 @@ def find_book_by_title():
     book = Book.find_by_title(title)
     print(book) if book else print(f"Book {title} not found")
 
+def find_book_by_id():
+    book_id = input("Enter the book's database id: ")
+    book = Book.find_by_id(book_id)
+    print(book) if book else print(f"Book {book_id} not found")
 
 ### bookstore functions ###
 ### customer functions ###

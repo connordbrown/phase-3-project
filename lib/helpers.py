@@ -24,5 +24,14 @@ def find_book_by_id():
     book = Book.find_by_id(book_id)
     print(book) if book else print(f"Book {book_id} not found")
 
+
+def create_book():
+    title = input("Enter the book's title: ")
+    author = input("Enter the book's author: ")
+    try:
+        bookstore_id = int(input("Enter the bookstore id: "))
+        customer_id = int(input("Enter the customer id: "))
+    except Exception as exc:
+        print("Error creating book: ", exc)
 ### bookstore functions ###
 ### customer functions ###

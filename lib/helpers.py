@@ -20,7 +20,10 @@ def find_book_by_title():
     print(book) if book else print(f"Book {title} not found")
 
 def find_book_by_id():
-    book_id = input("Enter the book's database id: ")
+    try:
+        book_id = int(input("Enter the book's database id: "))
+    except Exception as exc:
+        print("Error:", exc)
     book = Book.find_by_id(book_id)
     print(book) if book else print(f"Book #{book_id} not found")
 
@@ -87,6 +90,14 @@ def find_bookstore_by_name():
     name = input("Enter the bookstore's name: ")
     bookstore = Bookstore.find_by_name(name)
     print(bookstore) if bookstore else print(f"Bookstore {name} not found")
+
+def find_bookstore_by_id():
+    try:
+        bookstore_id = int(input("Enter the bookstore's database id: "))
+    except Exception as exc:
+        print("Error:", exc)
+    bookstore = Bookstore.find_by_id(bookstore_id)
+    print(bookstore) if bookstore else print(f"Bookstore #{bookstore_id} not found")
 
 
 ### customer functions ###

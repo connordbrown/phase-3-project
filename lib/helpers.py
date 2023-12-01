@@ -76,6 +76,12 @@ def list_customers_bookstores():
     for customer_bookstore in customers_bookstores:
         print(customer_bookstore)   
 
-
 ### bookstore functions ###
+
+def list_bookstores():
+    bookstores = Bookstore.get_all()
+    for bookstore in bookstores:
+        print(bookstore)
+
+
 ### customer functions ###

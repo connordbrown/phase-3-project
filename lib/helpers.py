@@ -99,5 +99,24 @@ def find_bookstore_by_id():
     bookstore = Bookstore.find_by_id(bookstore_id)
     print(bookstore) if bookstore else print(f"Bookstore #{bookstore_id} not found")
 
+def update_bookstore():
+    try:
+        bookstore_id = int(input("Enter the bookstore id: "))
+    except Exception as exc:
+        print("Error:", exc)
+
+    if bookstore := Bookstore.find_by_id(bookstore_id):
+        try:
+            name = input("Enter the bookstore's new name: ")
+            bookstore.name = name
+            location = input("Enter the bookstore's new location: ")
+            bookstore.location = location
+
+            bookstore.update()
+            print(f'Success: {bookstore}')
+        except Exception as exc:
+            print("Error updating bookstore:", exc)
+    else:
+        print(f"Bookstore #{bookstore_id} not found")
 
 ### customer functions ###

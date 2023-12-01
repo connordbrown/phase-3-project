@@ -19,13 +19,13 @@ def find_book_by_title():
     book = Book.find_by_title(title)
     print(book) if book else print(f"Book {title} not found")
 
-def find_book_by_id():
-    try:
-        book_id = int(input("Enter the book's database id: "))
-    except Exception as exc:
-        print("Error:", exc)
-    book = Book.find_by_id(book_id)
-    print(book) if book else print(f"Book #{book_id} not found")
+# def find_book_by_id():
+#     try:
+#         book_id = int(input("Enter the book's database id: "))
+#     except Exception as exc:
+#         print("Error:", exc)
+#     book = Book.find_by_id(book_id)
+#     print(book) if book else print(f"Book #{book_id} not found")
 
 def create_book():
     title = input("Enter the book's title: ")
@@ -91,14 +91,23 @@ def find_bookstore_by_name():
     bookstore = Bookstore.find_by_name(name)
     print(bookstore) if bookstore else print(f"Bookstore {name} not found")
 
-def find_bookstore_by_id():
-    try:
-        bookstore_id = int(input("Enter the bookstore's database id: "))
-    except Exception as exc:
-        print("Error:", exc)
-    bookstore = Bookstore.find_by_id(bookstore_id)
-    print(bookstore) if bookstore else print(f"Bookstore #{bookstore_id} not found")
+# def find_bookstore_by_id():
+#     try:
+#         bookstore_id = int(input("Enter the bookstore's database id: "))
+#     except Exception as exc:
+#         print("Error:", exc)
+#     bookstore = Bookstore.find_by_id(bookstore_id)
+#     print(bookstore) if bookstore else print(f"Bookstore #{bookstore_id} not found")
 
+def create_bookstore():
+    name = input("Enter the bookstore's name: ")
+    location = input("Enter the bookstore's location: ")
+    try:
+        bookstore = Bookstore.create(name, location)
+        print(f'Success: {bookstore}')
+    except Exception as exc:
+        print("Error creating bookstore: ", exc)
+        
 def update_bookstore():
     try:
         bookstore_id = int(input("Enter the bookstore id: "))
@@ -156,13 +165,13 @@ def find_customer_by_last_name():
     customer = Customer.find_by_last_name(last_name)
     print(customer) if customer else print(f"Customer {last_name} not found")
 
-def find_customer_by_id():
-    try:
-        customer_id = int(input("Enter the customers's database id: "))
-    except Exception as exc:
-        print("Error:", exc)
-    customer = Customer.find_by_id(customer_id)
-    print(customer) if customer else print(f"Customer {customer_id} not found")
+# def find_customer_by_id():
+#     try:
+#         customer_id = int(input("Enter the customers's database id: "))
+#     except Exception as exc:
+#         print("Error:", exc)
+#     customer = Customer.find_by_id(customer_id)
+#     print(customer) if customer else print(f"Customer {customer_id} not found")
 
 def create_customer():
     first_name = input("Enter the customer's first name: ")

@@ -191,4 +191,12 @@ def update_customer():
         except Exception as exc:
             print("Error updating customer:", exc)
     else:
-        print(f"Bookstore #{customer_id} not found")
+        print(f"Customer #{customer_id} not found")
+
+def delete_customer():
+    customer_id = input("Enter the customer's id: ")
+    if customer := Customer.find_by_id(customer_id):
+        customer.delete()
+        print(f'Customer #{customer_id} deleted')
+    else:
+        print(f'Customer #{customer_id} not found')

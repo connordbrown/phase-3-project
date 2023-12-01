@@ -22,8 +22,7 @@ def find_book_by_title():
 def find_book_by_id():
     book_id = input("Enter the book's database id: ")
     book = Book.find_by_id(book_id)
-    print(book) if book else print(f"Book {book_id} not found")
-
+    print(book) if book else print(f"Book #{book_id} not found")
 
 def create_book():
     title = input("Enter the book's title: ")
@@ -31,7 +30,33 @@ def create_book():
     try:
         bookstore_id = int(input("Enter the bookstore id: "))
         customer_id = int(input("Enter the customer id: "))
+        book = Book.create(title, author, bookstore_id, customer_id)
+        print(f'Success: {book}')
     except Exception as exc:
-        print("Error creating book: ", exc)
+        print("Error creating book:", exc)
+
+def update_book():
+    try:
+        book_id = int(input("Enter the book's id: "))
+    except Exception as exc:
+        print("Error", exc)
+
+    if book := Book.find_by_id(book_id):
+        try:
+            title = input("Enter the book's new title: ")
+            book.title = title
+            author = input("Enter the book's new author: ")
+            book.author = author
+            bookstore_id = int(input("Enter the book's new bookstore id: "))
+            book.bookstore_id = bookstore_id
+            customer_id = int(input("Enter the book's new customer id: "))
+            book.customer_id = customer_id
+
+            book.update()
+            print(f'Success: {book}')
+        except Exception as exc:
+            print("Error updating book:", exc)
+    else:
+        print(f"Book #{book_id} not found")
 ### bookstore functions ###
 ### customer functions ###

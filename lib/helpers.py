@@ -173,3 +173,22 @@ def create_customer():
     except Exception as exc:
         print("Error creating customer: ", exc)
 
+def update_customer():
+    try:
+        customer_id = int(input("Enter the customer id: "))
+    except Exception as exc:
+        print("Error:", exc)
+
+    if customer := Customer.find_by_id(customer_id):
+        try:
+            first_name = input("Enter the customer's new first name: ")
+            customer.first_name = first_name
+            last_name = input("Enter the customes's new last name: ")
+            customer.last_name = last_name
+
+            customer.update()
+            print(f'Success: {customer}')
+        except Exception as exc:
+            print("Error updating customer:", exc)
+    else:
+        print(f"Bookstore #{customer_id} not found")

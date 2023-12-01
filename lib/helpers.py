@@ -64,13 +64,17 @@ def delete_book():
         book_id = int(input("Enter the book's id: "))
     except Exception as exc:
         print(f"Error:", exc)
-        
+
     if book := Book.find_by_id(book_id):
         book.delete()
         print(f"Book {book_id} deleted")
     else:
         print(f"Book #{book_id} not found")
-    
+
+def list_customers_bookstores():
+    customers_bookstores = Book.customer_bookstores() 
+    for customer_bookstore in customers_bookstores:
+        print(customer_bookstore)   
 
 
 ### bookstore functions ###

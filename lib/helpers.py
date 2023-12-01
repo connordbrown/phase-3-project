@@ -83,5 +83,10 @@ def list_bookstores():
     for bookstore in bookstores:
         print(bookstore)
 
+def find_bookstore_by_name():
+    name = input("Enter the bookstore's name: ")
+    bookstore = Bookstore.find_by_name(name)
+    print(bookstore) if bookstore else print(f"Bookstore {name} not found")
+
 
 ### customer functions ###

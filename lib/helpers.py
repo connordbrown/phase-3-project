@@ -131,6 +131,19 @@ def delete_bookstore():
     else:
         print(f"Bookstore #{bookstore_id} not found")
 
+def list_bookstore_books():
+    try:
+        bookstore_id = int(input("Enter the bookstore id: "))
+    except Exception as exc:
+        print(f"Error:", exc)
+
+    if bookstore := Bookstore.find_by_id(bookstore_id):
+        books = bookstore.books()
+        for book in books:
+            print(book)
+    else:
+        print(f"Bookstore {bookstore_id} not found") 
+
 ### customer functions ###
 
 

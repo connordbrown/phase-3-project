@@ -1,3 +1,4 @@
+# lib/models/bookstore.py
 from models.__init__ import CURSOR, CONN
 
 class Bookstore:

@@ -16,6 +16,7 @@ def main():
             helper_1()
         else:
             print("Invalid choice")
+        to_menu = input("Press enter to return to menu?")
 
 
 def menu():

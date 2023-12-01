@@ -146,4 +146,20 @@ def list_bookstore_books():
 
 ### customer functions ###
 
+def list_customers():
+    customers = Customer.get_all()
+    for customer in customers:
+        print(customer)
 
+def find_customer_by_last_name():
+    last_name = input("Enter the customer's last name: ")
+    customer = Customer.find_by_last_name(last_name)
+    print(customer) if customer else print(f"Customer {last_name} not found")
+
+def find_customer_by_id():
+    try:
+        customer_id = int(input("Enter the customers's database id: "))
+    except Exception as exc:
+        print("Error:", exc)
+    customer = Customer.find_by_id(customer_id)
+    print(customer) if customer else print(f"Customer {customer_id} not found")

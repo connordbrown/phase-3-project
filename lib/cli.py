@@ -20,31 +20,15 @@ from helpers import (
     delete_customer
 )
 
-
-def main():
-    while True:
-        menu()
-        choice = input("> ")
-        if choice == "0":
-            exit_program()
-        elif choice == "1":
-            list_books()
-        elif choice == "2":
-            submain()
-        else:
-            print("Invalid choice")
-        print()
-
-
 def menu():
-    print()
-    print("Please select an option:")
+    print("Please select an option:\n")
     print("0. Exit the program")
-    print("1. Some useful function")
-    print()
+    print("1. Bookstore functions")
+    print("2. Customer functions")
+    print("3. Book functions")
 
 def bookstore_menu():
-    print("Please select an option:")
+    print("Please select an option:\n")
     print("0. Return to main menu")
     print("1. List all bookstores")
     print("2. Find bookstore by name")
@@ -54,7 +38,7 @@ def bookstore_menu():
     print("6: List all books for a given bookstore")
 
 def customer_menu():
-    print("Please select an option:")
+    print("Please select an option:\n")
     print("0. Return to main menu")
     print("1. List all customers")
     print("2. Find customer by last name")
@@ -64,7 +48,7 @@ def customer_menu():
     print("6: List all books for a given customer")   
 
 def book_menu():
-    print("Please select an option:")
+    print("Please select an option:\n")
     print("0. Return to main menu")
     print("1. List all books")
     print("2. Find book by title")
@@ -73,17 +57,92 @@ def book_menu():
     print("5: Delete a book")
     print("6: List all customers and bookstores associated with each book")   
 
-
-def submain():
+def bookstore_main():
     while True:
-        submenu()
+        print()
+        bookstore_menu()
         choice = input("> ")
-        if choice == '0':
+        print()
+        if choice == "0":
             break
+        elif choice == "1":
+            pass
+        elif choice == "2":
+            pass
+        elif choice == "3":
+            pass
+        elif choice == "4":
+            pass
+        elif choice == "5":
+            pass
+        elif choice == "6":
+            pass
         else:
-            print("Yay!")
-        input("Press ENTER to return to menu")
+            print("Invalid choice")
 
+def customer_main():
+    while True:
+        print()
+        customer_menu()
+        choice = input("> ")
+        print()
+        if choice == "0":
+            break
+        elif choice == "1":
+            pass
+        elif choice == "2":
+            pass
+        elif choice == "3":
+            pass
+        elif choice == "4":
+            pass
+        elif choice == "5":
+            pass
+        elif choice == "6":
+            pass
+        else:
+            print("Invalid choice")
+
+def book_main():
+    while True:
+        print()
+        book_menu()
+        choice = input("> ")
+        print()
+        if choice == "0":
+            break
+        elif choice == "1":
+            pass
+        elif choice == "2":
+            pass
+        elif choice == "3":
+            pass
+        elif choice == "4":
+            pass
+        elif choice == "5":
+            pass
+        elif choice == "6":
+            pass
+        else:
+            print("Invalid choice")
+
+def main():
+    while True:
+        print()
+        menu()
+        print()
+        choice = input("> ")
+        print()
+        if choice == "0":
+            exit_program()
+        elif choice == "1":
+            bookstore_main()
+        elif choice == "2":
+            customer_main()
+        elif choice == "3":
+            book_main()
+        else:
+            print("Invalid choice")
 
 
 if __name__ == "__main__":

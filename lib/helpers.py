@@ -13,6 +13,7 @@ def list_books():
     books = Book.get_all()
     for book in books:
         print(book)
+        
 
 def find_book_by_title():
     title = input("Enter the book's title: ")
@@ -83,8 +84,10 @@ def list_customers_bookstores():
 
 def list_bookstores():
     bookstores = Bookstore.get_all()
+    print(f"id  bookstore_name     location")
+    print(f"----------------------------------")
     for bookstore in bookstores:
-        print(bookstore)
+        print(f"{bookstore.id:<2}  {bookstore.name:<16}   {bookstore.location:<12}")
 
 def find_bookstore_by_name():
     name = input("Enter the bookstore's name: ")
@@ -107,7 +110,7 @@ def create_bookstore():
         print(f'Success: {bookstore}')
     except Exception as exc:
         print("Error creating bookstore: ", exc)
-        
+
 def update_bookstore():
     try:
         bookstore_id = int(input("Enter the bookstore id: "))

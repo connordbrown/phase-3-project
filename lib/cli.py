@@ -1,12 +1,6 @@
 # lib/cli.py
 from helpers import (
     exit_program,
-    list_books,
-    find_book_by_title,
-    create_book,
-    update_book,
-    delete_book,
-    list_customers_bookstores,
     list_bookstores,
     find_bookstore_by_name,
     create_bookstore,
@@ -17,28 +11,35 @@ from helpers import (
     find_customer_by_last_name,
     create_customer,
     update_customer,
-    delete_customer
+    delete_customer,
+    list_books,
+    find_book_by_title,
+    create_book,
+    update_book,
+    delete_book,
+    list_customers_bookstores
 )
 
 def menu():
+    print("Welcome to the Big Book Business store management system!\n")
     print("Please select an option:\n")
     print("0. Exit the program")
-    print("1. Bookstore functions")
-    print("2. Customer functions")
-    print("3. Book functions")
+    print("1. Manage bookstores")
+    print("2. Manage customers")
+    print("3. Manage books")
 
 def bookstore_menu():
-    print("Please select an option:\n")
+    print("Bookstore Manager - please select an option:\n")
     print("0. Return to main menu")
     print("1. List all bookstores")
     print("2. Find bookstore by name")
     print("3: Create a bookstore")
     print("4: Update a bookstore")
     print("5: Delete a bookstore")
-    print("6: List all books for a given bookstore")
+    print("6: List all books for a given bookst0ore")
 
 def customer_menu():
-    print("Please select an option:\n")
+    print("Customer Manager - please select an option:\n")
     print("0. Return to main menu")
     print("1. List all customers")
     print("2. Find customer by last name")
@@ -48,7 +49,7 @@ def customer_menu():
     print("6: List all books for a given customer")   
 
 def book_menu():
-    print("Please select an option:\n")
+    print("Book Manageer - please select an option:\n")
     print("0. Return to main menu")
     print("1. List all books")
     print("2. Find book by title")
@@ -59,14 +60,14 @@ def book_menu():
 
 def bookstore_main():
     while True:
-        print()
         bookstore_menu()
+        print()
         choice = input("> ")
         print()
         if choice == "0":
             break
         elif choice == "1":
-            pass
+            list_bookstores()
         elif choice == "2":
             pass
         elif choice == "3":
@@ -79,11 +80,12 @@ def bookstore_main():
             pass
         else:
             print("Invalid choice")
+        print()
 
 def customer_main():
     while True:
-        print()
         customer_menu()
+        print()
         choice = input("> ")
         print()
         if choice == "0":
@@ -105,8 +107,8 @@ def customer_main():
 
 def book_main():
     while True:
-        print()
         book_menu()
+        print()
         choice = input("> ")
         print()
         if choice == "0":
@@ -127,8 +129,8 @@ def book_main():
             print("Invalid choice")
 
 def main():
+    print()
     while True:
-        print()
         menu()
         print()
         choice = input("> ")

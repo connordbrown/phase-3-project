@@ -5,82 +5,7 @@ from models.customer import Customer
 
 def exit_program():
     print("Goodbye!")
-    exit()
-
-### book functions ###
-
-def list_books():
-    books = Book.get_all()
-    print(f"{'id':<2}   {'title':<25}   {'author':<22}   {'bookstore_id':<12}   {'customer_id':<2}")
-    print(f"--------------------------------------------------------------------------------------")
-    for book in books:
-        print(f"{book.id:<2}   {book.title:<25}   {book.author:<22}   {book.bookstore_id:<12}   {book.customer_id:<2}")
-        
-
-def find_book_by_title():
-    title = input("Enter the book's title: ")
-    book = Book.find_by_title(title)
-    print(book) if book else print(f"Book {title} not found")
-
-# def find_book_by_id():
-#     try:
-#         book_id = int(input("Enter the book's database id: "))
-#     except Exception as exc:
-#         print("Error:", exc)
-#     book = Book.find_by_id(book_id)
-#     print(book) if book else print(f"Book #{book_id} not found")
-
-def create_book():
-    title = input("Enter the book's title: ")
-    author = input("Enter the book's author: ")
-    try:
-        bookstore_id = int(input("Enter the bookstore id: "))
-        customer_id = int(input("Enter the customer id: "))
-        book = Book.create(title, author, bookstore_id, customer_id)
-        print(f'Success: {book}')
-    except Exception as exc:
-        print("Error creating book:", exc)
-
-def update_book():
-    try:
-        book_id = int(input("Enter the book's id: "))
-    except Exception as exc:
-        print("Error:", exc)
-
-    if book := Book.find_by_id(book_id):
-        try:
-            title = input("Enter the book's new title: ")
-            book.title = title
-            author = input("Enter the book's new author: ")
-            book.author = author
-            bookstore_id = int(input("Enter the book's new bookstore id: "))
-            book.bookstore_id = bookstore_id
-            customer_id = int(input("Enter the book's new customer id: "))
-            book.customer_id = customer_id
-
-            book.update()
-            print(f'Success: {book}')
-        except Exception as exc:
-            print("Error updating book:", exc)
-    else:
-        print(f"Book #{book_id} not found")
-
-def delete_book():
-    try:
-        book_id = int(input("Enter the book's id: "))
-    except Exception as exc:
-        print(f"Error:", exc)
-
-    if book := Book.find_by_id(book_id):
-        book.delete()
-        print(f"Book #{book_id} deleted")
-    else:
-        print(f"Book #{book_id} not found")
-
-def list_customers_bookstores():
-    customers_bookstores = Book.customer_bookstores() 
-    for customer_bookstore in customers_bookstores:
-        print(customer_bookstore)   
+    exit() 
 
 ### bookstore functions ###
 
@@ -93,8 +18,11 @@ def list_bookstores():
 
 def find_bookstore_by_name():
     name = input("Enter the bookstore's name: ")
+    print()
     bookstore = Bookstore.find_by_name(name)
-    print(bookstore) if bookstore else print(f"Bookstore {name} not found")
+    print(f"{'id':<2}   {'bookstore_name':<16}   {'location':<12}")
+    print(f"----------------------------------")
+    print(f"{bookstore.id:<2}   {bookstore.name:<16}   {bookstore.location:<12}") if bookstore else print(f"Bookstore {name} not found")
 
 # def find_bookstore_by_id():
 #     try:
@@ -169,6 +97,7 @@ def list_customers():
 
 def find_customer_by_last_name():
     last_name = input("Enter the customer's last name: ")
+    print()
     customer = Customer.find_by_last_name(last_name)
     print(customer) if customer else print(f"Customer {last_name} not found")
 
@@ -216,3 +145,79 @@ def delete_customer():
         print(f'Customer #{customer_id} deleted')
     else:
         print(f'Customer #{customer_id} not found')
+
+### book functions ###
+
+def list_books():
+    books = Book.get_all()
+    print(f"{'id':<2}   {'title':<25}   {'author':<22}   {'bookstore_id':<12}   {'customer_id':<2}")
+    print(f"--------------------------------------------------------------------------------------")
+    for book in books:
+        print(f"{book.id:<2}   {book.title:<25}   {book.author:<22}   {book.bookstore_id:<12}   {book.customer_id:<2}")
+        
+
+def find_book_by_title():
+    title = input("Enter the book's title: ")
+    print()
+    book = Book.find_by_title(title)
+    print(book) if book else print(f"Book {title} not found")
+
+# def find_book_by_id():
+#     try:
+#         book_id = int(input("Enter the book's database id: "))
+#     except Exception as exc:
+#         print("Error:", exc)
+#     book = Book.find_by_id(book_id)
+#     print(book) if book else print(f"Book #{book_id} not found")
+
+def create_book():
+    title = input("Enter the book's title: ")
+    author = input("Enter the book's author: ")
+    try:
+        bookstore_id = int(input("Enter the bookstore id: "))
+        customer_id = int(input("Enter the customer id: "))
+        book = Book.create(title, author, bookstore_id, customer_id)
+        print(f'Success: {book}')
+    except Exception as exc:
+        print("Error creating book:", exc)
+
+def update_book():
+    try:
+        book_id = int(input("Enter the book's id: "))
+    except Exception as exc:
+        print("Error:", exc)
+
+    if book := Book.find_by_id(book_id):
+        try:
+            title = input("Enter the book's new title: ")
+            book.title = title
+            author = input("Enter the book's new author: ")
+            book.author = author
+            bookstore_id = int(input("Enter the book's new bookstore id: "))
+            book.bookstore_id = bookstore_id
+            customer_id = int(input("Enter the book's new customer id: "))
+            book.customer_id = customer_id
+
+            book.update()
+            print(f'Success: {book}')
+        except Exception as exc:
+            print("Error updating book:", exc)
+    else:
+        print(f"Book #{book_id} not found")
+
+def delete_book():
+    try:
+        book_id = int(input("Enter the book's id: "))
+    except Exception as exc:
+        print(f"Error:", exc)
+
+    if book := Book.find_by_id(book_id):
+        book.delete()
+        print(f"Book #{book_id} deleted")
+    else:
+        print(f"Book #{book_id} not found")
+
+def list_customers_bookstores():
+    customers_bookstores = Book.customer_bookstores() 
+    for customer_bookstore in customers_bookstores:
+        print(customer_bookstore)  

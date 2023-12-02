@@ -69,7 +69,7 @@ def bookstore_main():
         elif choice == "1":
             list_bookstores()
         elif choice == "2":
-            pass
+            find_bookstore_by_name()
         elif choice == "3":
             pass
         elif choice == "4":

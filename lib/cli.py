@@ -91,7 +91,7 @@ def customer_main():
         if choice == "0":
             break
         elif choice == "1":
-            pass
+            list_customers()
         elif choice == "2":
             pass
         elif choice == "3":
@@ -104,6 +104,7 @@ def customer_main():
             pass
         else:
             print("Invalid choice")
+        print()
 
 def book_main():
     while True:
@@ -127,6 +128,7 @@ def book_main():
             pass
         else:
             print("Invalid choice")
+        print()
 
 def main():
     print()

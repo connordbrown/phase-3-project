@@ -84,10 +84,10 @@ def list_customers_bookstores():
 
 def list_bookstores():
     bookstores = Bookstore.get_all()
-    print(f"id  bookstore_name     location")
+    print(f"{'id':<2}   {'bookstore_name':<16}   {'location':<12}")
     print(f"----------------------------------")
     for bookstore in bookstores:
-        print(f"{bookstore.id:<2}  {bookstore.name:<16}   {bookstore.location:<12}")
+        print(f"{bookstore.id:<2}   {bookstore.name:<16}   {bookstore.location:<12}")
 
 def find_bookstore_by_name():
     name = input("Enter the bookstore's name: ")
@@ -160,8 +160,10 @@ def list_bookstore_books():
 
 def list_customers():
     customers = Customer.get_all()
+    print(f"{'id':<2}   {'last_name':<10}   {'first_name':<12}")
+    print(f"-----------------------------")
     for customer in customers:
-        print(customer)
+        print(f"{customer.id:<2}   {customer.last_name:<10}   {customer.first_name:<12}")
 
 def find_customer_by_last_name():
     last_name = input("Enter the customer's last name: ")

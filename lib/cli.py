@@ -1,8 +1,23 @@
 # lib/cli.py
-
 from helpers import (
     exit_program,
-    helper_1
+    list_books,
+    find_book_by_title,
+    create_book,
+    update_book,
+    delete_book,
+    list_customers_bookstores,
+    list_bookstores,
+    find_bookstore_by_name,
+    create_bookstore,
+    update_bookstore,
+    delete_bookstore,
+    list_bookstore_books,
+    list_customers,
+    find_customer_by_last_name,
+    create_customer,
+    update_customer,
+    delete_customer
 )
 
 

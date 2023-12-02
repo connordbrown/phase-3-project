@@ -11,8 +11,10 @@ def exit_program():
 
 def list_books():
     books = Book.get_all()
+    print(f"{'id':<2}   {'title':<25}   {'author':<22}   {'bookstore_id':<12}   {'customer_id':<2}")
+    print(f"--------------------------------------------------------------------------------------")
     for book in books:
-        print(book)
+        print(f"{book.id:<2}   {book.title:<25}   {book.author:<22}   {book.bookstore_id:<12}   {book.customer_id:<2}")
         
 
 def find_book_by_title():

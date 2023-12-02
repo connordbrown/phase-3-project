@@ -49,7 +49,7 @@ def customer_menu():
     print("6: List all books for a given customer")   
 
 def book_menu():
-    print("Book Manageer - please select an option:\n")
+    print("Book Manager - please select an option:\n")
     print("0. Return to main menu")
     print("1. List all books")
     print("2. Find book by title")
@@ -115,7 +115,7 @@ def book_main():
         if choice == "0":
             break
         elif choice == "1":
-            pass
+            list_books()
         elif choice == "2":
             pass
         elif choice == "3":

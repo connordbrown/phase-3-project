@@ -48,9 +48,20 @@ def bookstore_menu():
     print("0. Return to main menu")
     print("1. List all bookstores")
     print("2. Find bookstore by name")
-    print("3: Create bookstore")
-    print("4: Update bookstore")
-    print("5: Delete bookstore")
+    print("3: Create a bookstore")
+    print("4: Update a bookstore")
+    print("5: Delete a bookstore")
+    print("6: List all books for a given bookstore")
+
+def customer_menu():
+    print("Please select an option:")
+    print("0. Return to main menu")
+    print("1. List all customers")
+    print("2. Find customer by last name")
+    print("3: Create a customer")
+    print("4: Update a customer")
+    print("5: Delete a customer")
+    print("6: List all books for a given customer")   
 
 def submain():
     while True:

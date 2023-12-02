@@ -63,6 +63,17 @@ def customer_menu():
     print("5: Delete a customer")
     print("6: List all books for a given customer")   
 
+def book_menu():
+    print("Please select an option:")
+    print("0. Return to main menu")
+    print("1. List all books")
+    print("2. Find book by title")
+    print("3: Create a book")
+    print("4: Update a book")
+    print("5: Delete a book")
+    print("6: List all customers and bookstores associated with each book")   
+
+
 def submain():
     while True:
         submenu()

@@ -93,7 +93,7 @@ def customer_main():
         elif choice == "1":
             list_customers()
         elif choice == "2":
-            pass
+            find_customer_by_last_name()
         elif choice == "3":
             pass
         elif choice == "4":
@@ -117,7 +117,7 @@ def book_main():
         elif choice == "1":
             list_books()
         elif choice == "2":
-            pass
+            find_book_by_title()
         elif choice == "3":
             pass
         elif choice == "4":

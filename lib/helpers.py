@@ -20,9 +20,12 @@ def find_bookstore_by_name():
     name = input("Enter the bookstore's name: ")
     print()
     bookstore = Bookstore.find_by_name(name)
-    print(f"{'id':<2}   {'bookstore_name':<16}   {'location':<12}")
-    print(f"----------------------------------")
-    print(f"{bookstore.id:<2}   {bookstore.name:<16}   {bookstore.location:<12}") if bookstore else print(f"Bookstore {name} not found")
+    if bookstore:
+        print(f"{'id':<2}   {'bookstore_name':<16}   {'location':<12}")
+        print(f"----------------------------------")
+        print(f"{bookstore.id:<2}   {bookstore.name:<16}   {bookstore.location:<12}")
+    else:
+        print(f"Bookstore '{name}' not found")
 
 # def find_bookstore_by_id():
 #     try:
@@ -99,7 +102,12 @@ def find_customer_by_last_name():
     last_name = input("Enter the customer's last name: ")
     print()
     customer = Customer.find_by_last_name(last_name)
-    print(customer) if customer else print(f"Customer {last_name} not found")
+    if customer:
+        print(f"{'id':<2}   {'last_name':<10}   {'first_name':<12}")
+        print(f"-----------------------------")
+        print(f"{customer.id:<2}   {customer.last_name:<10}   {customer.first_name:<12}")
+    else:
+        print(f"Customer '{last_name}' not found")
 
 # def find_customer_by_id():
 #     try:
@@ -160,7 +168,12 @@ def find_book_by_title():
     title = input("Enter the book's title: ")
     print()
     book = Book.find_by_title(title)
-    print(book) if book else print(f"Book {title} not found")
+    if book:
+        print(f"{'id':<2}   {'title':<25}   {'author':<22}   {'bookstore_id':<12}   {'customer_id':<2}")
+        print(f"--------------------------------------------------------------------------------------")
+        print(f"{book.id:<2}   {book.title:<25}   {book.author:<22}   {book.bookstore_id:<12}   {book.customer_id:<2}")
+    else:
+        print(f"Book '{title}' not found")
 
 # def find_book_by_id():
 #     try:

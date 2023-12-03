@@ -120,7 +120,7 @@ def book_main():
         elif choice == "2":
             find_book_by_title()
         elif choice == "3":
-            pass
+            create_book()
         elif choice == "4":
             pass
         elif choice == "5":

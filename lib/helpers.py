@@ -203,12 +203,15 @@ def find_book_by_title():
 #     print(book) if book else print(f"Book #{book_id} not found")
 
 def create_book():
+    print(f"Create a book")
+    print("--------------------")
     title = input("Enter the book's title: ")
     author = input("Enter the book's author: ")
     try:
         bookstore_id = int(input("Enter the bookstore id: "))
         customer_id = int(input("Enter the customer id: "))
         book = Book.create(title, author, bookstore_id, customer_id)
+        print()
         print(f'Success: {book}')
     except Exception as exc:
         print("Error creating book:", exc)

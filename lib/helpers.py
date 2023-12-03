@@ -36,10 +36,13 @@ def find_bookstore_by_name():
 #     print(bookstore) if bookstore else print(f"Bookstore #{bookstore_id} not found")
 
 def create_bookstore():
+    print(f"Create a bookstore")
+    print("--------------------")
     name = input("Enter the bookstore's name: ")
     location = input("Enter the bookstore's location: ")
     try:
         bookstore = Bookstore.create(name, location)
+        print()
         print(f'Success: {bookstore}')
     except Exception as exc:
         print("Error creating bookstore: ", exc)
@@ -153,6 +156,19 @@ def delete_customer():
         print(f'Customer #{customer_id} deleted')
     else:
         print(f'Customer #{customer_id} not found')
+
+def list_customer_books():
+    try:
+        customer_id = int(input("Enter the customer id: "))
+    except Exception as exc:
+        print(f"Error:", exc)
+
+    if customer := Bookstore.find_by_id(customer_id):
+        books = customer.books()
+        for book in books:
+            print(book)
+    else:
+        print(f"Customer #{customer_id} not found") 
 
 ### book functions ###
 

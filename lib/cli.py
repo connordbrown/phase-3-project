@@ -12,6 +12,7 @@ from helpers import (
     create_customer,
     update_customer,
     delete_customer,
+    list_customer_books,
     list_books,
     find_book_by_title,
     create_book,
@@ -71,7 +72,7 @@ def bookstore_main():
         elif choice == "2":
             find_bookstore_by_name()
         elif choice == "3":
-            pass
+            create_bookstore()
         elif choice == "4":
             pass
         elif choice == "5":

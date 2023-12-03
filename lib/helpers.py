@@ -121,10 +121,13 @@ def find_customer_by_last_name():
 #     print(customer) if customer else print(f"Customer {customer_id} not found")
 
 def create_customer():
+    print(f"Create a customer")
+    print("--------------------")
     first_name = input("Enter the customer's first name: ")
     last_name = input("Enter the customer's last name: ")
     try:
         customer = Customer.create(first_name, last_name)
+        print()
         print(f'Success: {customer}')
     except Exception as exc:
         print("Error creating customer: ", exc)

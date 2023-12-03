@@ -96,7 +96,7 @@ def customer_main():
         elif choice == "2":
             find_customer_by_last_name()
         elif choice == "3":
-            pass
+            create_customer()
         elif choice == "4":
             pass
         elif choice == "5":

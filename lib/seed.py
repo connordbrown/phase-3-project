@@ -43,6 +43,8 @@ def seed_database():
     Book.create("Candide", "Voltaire", 3, 6)
     Book.create("The Swiss Family Robinson", "Johann David Wyss", 3, 6)
     Book.create("A Wrinkle in Time", "Madeleine L'Engle", 3, 6)
-    
-seed_database()
-print("Seeded database")
+
+
+if __name__ == '__main__':
+    seed_database()
+    print("Seeded database")

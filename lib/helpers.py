@@ -36,7 +36,7 @@ def find_bookstore_by_name():
 #     print(bookstore) if bookstore else print(f"Bookstore #{bookstore_id} not found")
 
 def create_bookstore():
-    print(f"Create a bookstore")
+    print("Create a bookstore")
     print("--------------------")
     name = input("Enter the bookstore's name: ")
     location = input("Enter the bookstore's location: ")
@@ -48,6 +48,8 @@ def create_bookstore():
         print("Error creating bookstore: ", exc)
 
 def update_bookstore():
+    print("Update a bookstore")
+    print("--------------------")
     try:
         bookstore_id = int(input("Enter the bookstore id: "))
     except Exception as exc:
@@ -61,6 +63,7 @@ def update_bookstore():
             bookstore.location = location
 
             bookstore.update()
+            print()
             print(f'Success: {bookstore}')
         except Exception as exc:
             print("Error updating bookstore:", exc)
@@ -133,6 +136,8 @@ def create_customer():
         print("Error creating customer: ", exc)
 
 def update_customer():
+    print("Update a customer")
+    print("-------------------")
     try:
         customer_id = int(input("Enter the customer id: "))
     except Exception as exc:
@@ -146,6 +151,7 @@ def update_customer():
             customer.last_name = last_name
 
             customer.update()
+            print()
             print(f'Success: {customer}')
         except Exception as exc:
             print("Error updating customer:", exc)
@@ -217,6 +223,8 @@ def create_book():
         print("Error creating book:", exc)
 
 def update_book():
+    print("Update a book")
+    print("---------------")
     try:
         book_id = int(input("Enter the book's id: "))
     except Exception as exc:
@@ -234,6 +242,7 @@ def update_book():
             book.customer_id = customer_id
 
             book.update()
+            print()
             print(f'Success: {book}')
         except Exception as exc:
             print("Error updating book:", exc)

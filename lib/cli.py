@@ -74,7 +74,7 @@ def bookstore_main():
         elif choice == "3":
             create_bookstore()
         elif choice == "4":
-            pass
+            update_bookstore()
         elif choice == "5":
             pass
         elif choice == "6":
@@ -98,7 +98,7 @@ def customer_main():
         elif choice == "3":
             create_customer()
         elif choice == "4":
-            pass
+            update_customer()
         elif choice == "5":
             pass
         elif choice == "6":
@@ -122,7 +122,7 @@ def book_main():
         elif choice == "3":
             create_book()
         elif choice == "4":
-            pass
+            update_book()
         elif choice == "5":
             pass
         elif choice == "6":

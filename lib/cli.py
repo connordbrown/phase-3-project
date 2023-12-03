@@ -78,7 +78,7 @@ def bookstore_main():
         elif choice == "5":
             delete_bookstore()
         elif choice == "6":
-            pass
+            list_bookstore_books()
         else:
             print("Invalid choice")
         print()
@@ -102,7 +102,7 @@ def customer_main():
         elif choice == "5":
             delete_customer()
         elif choice == "6":
-            pass
+            list_customer_books()
         else:
             print("Invalid choice")
         print()
@@ -126,7 +126,7 @@ def book_main():
         elif choice == "5":
             delete_book()
         elif choice == "6":
-            pass
+            list_customers_bookstores()
         else:
             print("Invalid choice")
         print()

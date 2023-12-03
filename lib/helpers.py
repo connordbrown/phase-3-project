@@ -88,13 +88,16 @@ def delete_bookstore():
 def list_bookstore_books():
     try:
         bookstore_id = int(input("Enter the bookstore id: "))
+        print()
     except Exception as exc:
         print(f"Error:", exc)
 
     if bookstore := Bookstore.find_by_id(bookstore_id):
         books = bookstore.books()
+        print(f"{'id':<2}   {'title':<25}   {'author':<22}   {'customer_id':<2}")
+        print(f"-----------------------------------------------------------------------")
         for book in books:
-            print(book)
+            print(f"{book.id:<2}   {book.title:<25}   {book.author:<22}   {book.customer_id:<2}")
     else:
         print(f"Bookstore {bookstore_id} not found") 
 
@@ -175,13 +178,16 @@ def delete_customer():
 def list_customer_books():
     try:
         customer_id = int(input("Enter the customer id: "))
+        print()
     except Exception as exc:
         print(f"Error:", exc)
 
-    if customer := Bookstore.find_by_id(customer_id):
+    if customer := Customer.find_by_id(customer_id):
         books = customer.books()
+        print(f"{'id':<2}   {'title':<25}   {'author':<22}   {'bookstore_id':<12}")
+        print(f"------------------------------------------------------------------------")
         for book in books:
-            print(book)
+            print(f"{book.id:<2}   {book.title:<25}   {book.author:<22}   {book.customer_id:<2}")
     else:
         print(f"Customer #{customer_id} not found") 
 
@@ -272,5 +278,7 @@ def delete_book():
 
 def list_customers_bookstores():
     customers_bookstores = Book.customer_bookstores() 
+    print(f"{'book_title':<25}   {'bookstore_name':<18}   {'customer_last_name':<12}")
+    print(f"---------------------------------------------------------------------")
     for customer_bookstore in customers_bookstores:
-        print(customer_bookstore)  
+        print(f"{customer_bookstore[0]:<25}   {customer_bookstore[1].name:<18}   {customer_bookstore[2].last_name:<12}")

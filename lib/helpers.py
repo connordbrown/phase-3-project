@@ -27,14 +27,6 @@ def find_bookstore_by_name():
     else:
         print(f"Bookstore '{name}' not found")
 
-# def find_bookstore_by_id():
-#     try:
-#         bookstore_id = int(input("Enter the bookstore's database id: "))
-#     except Exception as exc:
-#         print("Error:", exc)
-#     bookstore = Bookstore.find_by_id(bookstore_id)
-#     print(bookstore) if bookstore else print(f"Bookstore #{bookstore_id} not found")
-
 def create_bookstore():
     print("Create a bookstore")
     print("--------------------")
@@ -51,10 +43,6 @@ def create_bookstore():
 def update_bookstore():
     print("Update a bookstore")
     print("--------------------")
-    # try:
-    #     bookstore_id = int(input("Enter the bookstore id: "))
-    # except Exception as exc:
-    #     print("Error:", exc)
     bookstore_name = input("Enter the bookstore name: ")
 
     if bookstore := Bookstore.find_by_name(bookstore_name):
@@ -73,10 +61,6 @@ def update_bookstore():
         print(f"Bookstore '{bookstore_name}' not found")
 
 def delete_bookstore():
-    # try:
-    #     bookstore_id = int(input("Enter the bookstore id: "))
-    # except Exception as exc:
-    #     print(f"Error:", exc)
     bookstore_name = input("Enter the bookstore name: ")
 
     if bookstore := Bookstore.find_by_name(bookstore_name):
@@ -88,11 +72,6 @@ def delete_bookstore():
         print(f"Bookstore '{bookstore_name}' not found")
 
 def list_bookstore_books():
-    # try:
-    #     bookstore_id = int(input("Enter the bookstore id: "))
-    #     print()
-    # except Exception as exc:
-    #     print(f"Error:", exc)
     bookstore_name = input("Enter the bookstore name: ")
 
     if bookstore := Bookstore.find_by_name(bookstore_name):
@@ -124,14 +103,6 @@ def find_customer_by_last_name():
     else:
         print(f"Customer '{last_name}' not found")
 
-# def find_customer_by_id():
-#     try:
-#         customer_id = int(input("Enter the customers's database id: "))
-#     except Exception as exc:
-#         print("Error:", exc)
-#     customer = Customer.find_by_id(customer_id)
-#     print(customer) if customer else print(f"Customer {customer_id} not found")
-
 def create_customer():
     print(f"Create a customer")
     print("--------------------")
@@ -148,10 +119,6 @@ def create_customer():
 def update_customer():
     print("Update a customer")
     print("-------------------")
-    # try:
-    #     customer_id = int(input("Enter the customer id: "))
-    # except Exception as exc:
-    #     print("Error:", exc)
     last_name = input("Enter the customer's last name: ")
 
     if customer := Customer.find_by_last_name(last_name):
@@ -180,11 +147,6 @@ def delete_customer():
         print(f"Customer '{last_name}' not found")
 
 def list_customer_books():
-    # try:
-    #     customer_id = int(input("Enter the customer id: "))
-    #     print()
-    # except Exception as exc:
-    #     print(f"Error:", exc)
     last_name = input("Enter the customer's last name: ")
 
     if customer := Customer.find_by_last_name(last_name):
@@ -218,14 +180,6 @@ def find_book_by_title():
     else:
         print(f"Book '{title}' not found")
 
-# def find_book_by_id():
-#     try:
-#         book_id = int(input("Enter the book's database id: "))
-#     except Exception as exc:
-#         print("Error:", exc)
-#     book = Book.find_by_id(book_id)
-#     print(book) if book else print(f"Book #{book_id} not found")
-
 def create_book():
     print(f"Create a book")
     print("--------------------")
@@ -247,10 +201,6 @@ def create_book():
 def update_book():
     print("Update a book")
     print("---------------")
-    # try:
-    #     book_id = int(input("Enter the book's id: "))
-    # except Exception as exc:
-    #     print("Error:", exc)
     title = input("Enter the book title: ")
 
     if book := Book.find_by_title(title):
@@ -275,10 +225,6 @@ def update_book():
         print(f"Book '{title}' not found")
 
 def delete_book():
-    # try:
-    #     book_id = int(input("Enter the book's id: "))
-    # except Exception as exc:
-    #     print(f"Error:", exc)
     title = input("Enter the book title: ")
 
     if book := Book.find_by_title(title):

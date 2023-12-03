@@ -37,7 +37,7 @@ def bookstore_menu():
     print("3: Create a bookstore")
     print("4: Update a bookstore")
     print("5: Delete a bookstore")
-    print("6: List all books for a given bookst0ore")
+    print("6: List all books for a given bookstore")
 
 def customer_menu():
     print("Customer Manager - please select an option:\n")
@@ -76,7 +76,7 @@ def bookstore_main():
         elif choice == "4":
             update_bookstore()
         elif choice == "5":
-            pass
+            delete_bookstore()
         elif choice == "6":
             pass
         else:
@@ -100,7 +100,7 @@ def customer_main():
         elif choice == "4":
             update_customer()
         elif choice == "5":
-            pass
+            delete_customer()
         elif choice == "6":
             pass
         else:
@@ -124,7 +124,7 @@ def book_main():
         elif choice == "4":
             update_book()
         elif choice == "5":
-            pass
+            delete_book()
         elif choice == "6":
             pass
         else:

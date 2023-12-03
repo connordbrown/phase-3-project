@@ -45,6 +45,7 @@ def create_bookstore():
         print()
         print(f'Success: {bookstore}')
     except Exception as exc:
+        print()
         print("Error creating bookstore: ", exc)
 
 def update_bookstore():
@@ -78,8 +79,10 @@ def delete_bookstore():
 
     if bookstore := Bookstore.find_by_id(bookstore_id):
         bookstore.delete()
+        print()
         print(f"Bookstore #{bookstore_id} deleted")
     else:
+        print()
         print(f"Bookstore #{bookstore_id} not found")
 
 def list_bookstore_books():
@@ -133,6 +136,7 @@ def create_customer():
         print()
         print(f'Success: {customer}')
     except Exception as exc:
+        print()
         print("Error creating customer: ", exc)
 
 def update_customer():
@@ -162,8 +166,10 @@ def delete_customer():
     customer_id = input("Enter the customer's id: ")
     if customer := Customer.find_by_id(customer_id):
         customer.delete()
+        print()
         print(f'Customer #{customer_id} deleted')
     else:
+        print()
         print(f'Customer #{customer_id} not found')
 
 def list_customer_books():
@@ -220,6 +226,7 @@ def create_book():
         print()
         print(f'Success: {book}')
     except Exception as exc:
+        print()
         print("Error creating book:", exc)
 
 def update_book():
@@ -257,8 +264,10 @@ def delete_book():
 
     if book := Book.find_by_id(book_id):
         book.delete()
+        print()
         print(f"Book #{book_id} deleted")
     else:
+        print()
         print(f"Book #{book_id} not found")
 
 def list_customers_bookstores():

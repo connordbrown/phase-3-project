@@ -13,16 +13,16 @@ def seed_database():
     Customer.create_table()
     Book.create_table()
 
-    Bookstore.create("Barnes and Noble", "Boulder") #1
-    Bookstore.create("Borders", "Superior")         #2
-    Bookstore.create("Read Queen", "Lafayette")     #3
+    Bookstore.create("Barnes and Noble", "Boulder") 
+    Bookstore.create("Borders", "Superior")         
+    Bookstore.create("Read Queen", "Lafayette")     
 
-    Customer.create("James", "Jameson")  #1
-    Customer.create("Dick", "Dickens")   #2
-    Customer.create("John", "Johnson")   #3
-    Customer.create("Wendy", "Williams") #4
-    Customer.create("Sarah", "Summers")  #5
-    Customer.create("Emma", "Emsworth")  #6
+    Customer.create("James", "Jameson")  
+    Customer.create("Dick", "Dickens")   
+    Customer.create("John", "Johnson")   
+    Customer.create("Wendy", "Williams") 
+    Customer.create("Sarah", "Summers")  
+    Customer.create("Emma", "Emsworth")  
 
     Book.create("Moby Dick", "Herman Melville", 1, 1)
     Book.create("Moby Dick", "Herman Melville", 1, 2)

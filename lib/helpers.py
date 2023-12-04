@@ -188,16 +188,20 @@ def create_book():
 
     try:
         bookstore_name = input("Enter the bookstore name: ")
+        if not bookstore_name:
+            raise Exception("Bookstore must have a name")
         if bookstore := Bookstore.find_by_name(bookstore_name):
             bookstore_id = bookstore.id
         else: 
-            raise Exception("Bookstore not found")
+            raise Exception(f"Bookstore '{bookstore_name}' not found")
 
         last_name = input("Enter the customer's last_name: ")
+        if not last_name:
+            raise Exception("Customer must have a last name")
         if customer := Customer.find_by_last_name(last_name):
             customer_id = customer.id
         else:
-            raise Exception("Customer not found")
+            raise Exception(f"Customer '{last_name}' not found")
 
         book = Book.create(title, author, bookstore_id, customer_id)
         print()
@@ -220,12 +224,16 @@ def update_book():
 
         try:
             bookstore_name = input("Enter the book's new bookstore name: ")
+            if not bookstore_name:
+                raise Exception("Bookstore must have a name")
             if bookstore := Bookstore.find_by_name(bookstore_name):
                 book.bookstore_id = bookstore.id
             else: 
                 raise Exception(f"Bookstore '{bookstore_name}' not found")
 
             last_name = input("Enter the book's new customer's last_name: ")
+            if not last_name:
+                raise Exception("Customer must have a last name")
             if customer := Customer.find_by_last_name(last_name):
                 book.customer_id = customer.id
             else:

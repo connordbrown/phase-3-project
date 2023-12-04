@@ -28,9 +28,9 @@ class Book:
     @title.setter
     def title(self, title):
         if not isinstance(title, str):
-            raise Exception
+            raise Exception("Book title must be a string")
         if not len(title):
-            raise Exception
+            raise Exception("Book must have a title")
         self._title = title
     
     @property
@@ -40,9 +40,9 @@ class Book:
     @author.setter
     def author(self, author):
         if not isinstance(author, str):
-            raise Exception
+            raise Exception("Book author must be a string")
         if not len(author):
-            raise Exception
+            raise Exception("Book must have an author")
         self._author = author
     
     @property
@@ -52,9 +52,9 @@ class Book:
     @bookstore_id.setter
     def bookstore_id(self, bookstore_id):
         if not isinstance(bookstore_id, int):
-            raise Exception
+            raise Exception("Book's bookstore id must be an integer")
         if not Bookstore.find_by_id(bookstore_id):
-            raise Exception
+            raise Exception("Book must have an existing bookstore")
         self._bookstore_id = bookstore_id
     
     @property
@@ -64,9 +64,9 @@ class Book:
     @customer_id.setter
     def customer_id(self, customer_id):
         if not isinstance(customer_id, int):
-            raise Exception
+            raise Exception("Book's customer id must be an integer")
         if not Customer.find_by_id(customer_id):
-            raise Exception
+            raise Exception("Book must have an existing customer")
         self._customer_id = customer_id
     
     @classmethod

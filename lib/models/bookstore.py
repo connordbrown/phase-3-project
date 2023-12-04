@@ -21,9 +21,9 @@ class Bookstore:
     @name.setter
     def name(self, name):
         if not isinstance(name, str):
-            raise Exception
+            raise Exception("Bookstore name must be a string")
         if not len(name):
-            raise Exception
+            raise Exception("Bookstore must have a name")
         self._name = name
     
     @property
@@ -33,9 +33,9 @@ class Bookstore:
     @location.setter
     def location(self, location):
         if not isinstance(location, str):
-            raise Exception
+            raise Exception("Bookstore location must be a string")
         if not len(location):
-            raise Exception
+            raise Exception("Bookstore must have a location")
         self._location = location
     
     @classmethod

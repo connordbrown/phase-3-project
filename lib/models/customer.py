@@ -21,9 +21,9 @@ class Customer:
     @first_name.setter
     def first_name(self, first_name):
         if not isinstance(first_name, str):
-            raise Exception
+            raise Exception("Customer first name must be a string")
         if not len(first_name):
-            raise Exception
+            raise Exception("Customer must have a first name")
         self._first_name = first_name
 
     @property
@@ -33,9 +33,9 @@ class Customer:
     @last_name.setter
     def last_name(self, last_name):
         if not isinstance(last_name, str):
-            raise Exception
+            raise Exception("Customer last name must be a string")
         if not len(last_name):
-            raise Exception
+            raise Exception("Customer must have a last name")
         self._last_name = last_name
     
     @classmethod

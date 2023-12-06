@@ -8,18 +8,18 @@ in Python for each database table. The CLI makes interaction with the database s
 
 ## Main Files
 
-**lib/models**
+**lib/models:**
 
 - *\_\_init\_\_.py* - connects to company.db and provides cursor for interacting with database
 - *book.py* - contains Book class (models books table) and associated CRUD methods
 - *bookstore.py* - contains Bookstore class (models bookstores table) and associated CRUD methods
 - *customer.py* - contains Customer class (models customers table) and associated CRUD methods
 
-**lib**
+**lib:**
 
 - *cli.py* - main CLI program
 - *debug.py* - used for debugging any part of program
-- *helpers.py* - contains helper methods for cli.py
+- *helpers.py* - contains helper methods for *cli.py*
 - *seed.py* - clears the database, then seeds it with sample data
 - *company.db* - the SQLite database used
 

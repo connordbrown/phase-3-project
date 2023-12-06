@@ -8,12 +8,20 @@ This application uses Python 3.8. It has dependencies that require a virtual env
 ```bash
 pipenv --python 3.8
 ```
+
 Otherwise, install dependencies and run the virtual environment:
+
 ```bash
 pipenv install
 pipenv shell
 ```
-Then, run the app:
+
+Seed the database:
+```bash
+python lib/seed.py
+```
+
+Finally, run the app:
 ```bash
 python lib/cli.py
 ```
@@ -52,7 +60,7 @@ Customer Manager - please select an option:
 ```
 Select '0' to return to main menu, '1' to list all customers in the database, '2' to find a customer by last name, '3' to create a new customer, '4' to update a specific customer, '5' to delete a specific customer, or '6' to list all books owned by a specific customer:
 
-1. List all customers
+*1. List all customers*
 ```plaintext
 > 1
 
@@ -66,7 +74,7 @@ Summers      Sarah
 Emsworth     Emma 
 ```
 
-2. Find a customer by last name
+*2. Find a customer by last name*
 ```plaintext
 > 2
 
@@ -77,7 +85,7 @@ last_name    first_name
 Summers      Sarah  
 ```
 
-3. Create a customer
+*3. Create a customer*
 ```plaintext
 > 3
 
@@ -103,7 +111,7 @@ Emsworth     Emma
 Roberts      Bob  
 ```
 
-4. Update a customer
+*4. Update a customer*
 ```plaintext
 > 4
 
@@ -131,7 +139,7 @@ Emsworth     Emma
 Roberts      Phillip  
 ```
 
-5. Delete a customer
+*5. Delete a customer*
 ```plaintext
 > 5
 
@@ -151,6 +159,19 @@ Johnson      John
 Williams     Wendy       
 Summers      Sarah       
 Emsworth     Emma   
+```
+
+*6. List all books for a given customer*
+```plaintext
+> 6
+
+Enter the customer's last name: Summers
+
+title                       author                   bookstore   
+------------------------------------------------------------------------
+The Wind in the Willows     Kenneth Grahame          Read Queen          
+The Grapes of Wrath         John Steinbeck           Read Queen          
+Fahrenheit 451              Ray Bradbury             Read Queen    
 ```
 
 ## Contributing

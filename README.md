@@ -21,7 +21,8 @@ python lib/cli.py
 ## Usage
 
 Upon startup, the user will see the following screen:
-```bash
+
+```plaintext
 Welcome to AllBooks, the book business management system!
 
 Please select an option:
@@ -33,8 +34,10 @@ Please select an option:
 
 > 
 ```
+
 Selecting '0' will exit the program; selecting anything else will take the user to a menu for interacting with a specific database table. For example, if '2' is selected by typing '2' and pressing 'enter', the customers menu will be displayed:
-```bash
+
+```plaintext
 Customer Manager - please select an option:
 
 0. Return to main menu
@@ -50,7 +53,7 @@ Customer Manager - please select an option:
 Select '0' to return to main menu, '1' to list all customers in the database, '2' to find a customer by last name, '3' to create a new customer, '4' to update a specific customer, '5' to delete a specific customer, or '6' to list all books owned by a specific customer.
 
 1. List all customers
-```bash
+```plaintext
 > 1
 
 last_name    first_name  
@@ -64,7 +67,7 @@ Emsworth     Emma
 ```
 
 2. Find a customer by last name
-```bash
+```plaintext
 > 2
 
 Enter the customer's last name: Summers
@@ -75,7 +78,7 @@ Summers      Sarah
 ```
 
 3. Create a customer
-```bash
+plaintext
 > 3
 
 Create a customer
@@ -85,7 +88,7 @@ Enter the customer's last name: Roberts
 
 Success: customer 'Bob Roberts' created
 ```
-```bash
+```plaintext
 > 1
 
 last_name    first_name  
@@ -100,7 +103,7 @@ Roberts      Bob
 ```
 
 4. Update a customer
-```bash
+```plaintext
 > 4
 
 Update a customer
@@ -111,8 +114,8 @@ Enter the customer's new first name: Phillip
 Enter the customers's new last name: Roberts
 
 Success: customer 'Phillip Roberts' updated
-``````
-```bash
+```
+```plaintext
 > 1
 
 last_name    first_name  
@@ -127,14 +130,14 @@ Roberts      Phillip
 ```
 
 5. Delete a customer
-```bash
+```plaintext
 > 5
 
 Enter the customer's last name: Roberts
 
 Customer 'Phillip Roberts' deleted
 ```
-```bash
+```plaintext
 > 1
 
 last_name    first_name  

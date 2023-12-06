@@ -50,7 +50,7 @@ Customer Manager - please select an option:
 
 > 
 ```
-Select '0' to return to main menu, '1' to list all customers in the database, '2' to find a customer by last name, '3' to create a new customer, '4' to update a specific customer, '5' to delete a specific customer, or '6' to list all books owned by a specific customer.
+Select '0' to return to main menu, '1' to list all customers in the database, '2' to find a customer by last name, '3' to create a new customer, '4' to update a specific customer, '5' to delete a specific customer, or '6' to list all books owned by a specific customer:
 
 1. List all customers
 ```plaintext
@@ -78,7 +78,7 @@ Summers      Sarah
 ```
 
 3. Create a customer
-plaintext
+```plaintext
 > 3
 
 Create a customer
@@ -88,6 +88,7 @@ Enter the customer's last name: Roberts
 
 Success: customer 'Bob Roberts' created
 ```
+The new customer is displayed in the customers table:
 ```plaintext
 > 1
 
@@ -115,6 +116,7 @@ Enter the customers's new last name: Roberts
 
 Success: customer 'Phillip Roberts' updated
 ```
+The updated name is displayed in the customers table:
 ```plaintext
 > 1
 
@@ -137,6 +139,7 @@ Enter the customer's last name: Roberts
 
 Customer 'Phillip Roberts' deleted
 ```
+The deleted customer is removed from the customers table:
 ```plaintext
 > 1
 

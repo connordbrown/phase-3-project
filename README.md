@@ -6,6 +6,13 @@ It uses a SQLite database to store three tables: bookstores, customers, and book
 a bookstore has many books, and a customer has many books. The application contains CRUD (Create, Read, Update, and Delete) methods implemented
 in Python for each database table. The CLI makes interaction with the database simple and straightforward.
 
+## Files
+
+*lib/models*
+\_\_init\_\_.py
+
+
+
 ## Operation
 
 This application uses Python 3.8. It has dependencies that require a virtual environment. If the virtual environment is not already set up, use the following command:
@@ -25,7 +32,7 @@ pipenv install
 pipenv shell
 ```
 
-Seed the database:
+Then, seed the database:
 ```bash
 python lib/seed.py
 ```
@@ -183,7 +190,7 @@ The Grapes of Wrath         John Steinbeck           Read Queen
 Fahrenheit 451              Ray Bradbury             Read Queen    
 ```
 
-Both the Bookstore Manager menu and Book Manager menu have nearly identical options, just for bookstores or books instead of customers.
+**Note**: Both the Bookstore Manager menu and Book Manager menu have nearly identical options, just for bookstores or books instead of customers.
 
 ## Contributing
 

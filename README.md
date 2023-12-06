@@ -6,12 +6,22 @@ It uses a SQLite database to store three tables: bookstores, customers, and book
 a bookstore has many books, and a customer has many books. The application contains CRUD (Create, Read, Update, and Delete) methods implemented
 in Python for each database table. The CLI makes interaction with the database simple and straightforward.
 
-## Files
+## Main Files
 
 *lib/models*
-\_\_init\_\_.py
 
+- \_\_init\_\_.py - connects to company.db and provides cursor for interacting with database
+- book.py - contains Book class (models books table) and associated CRUD methods
+- bookstore.py - contains Bookstore class (models bookstores table) and associated CRUD methods
+- customer.py - contains Customer class (models customers table) and associated CRUD methods
 
+*lib*
+
+- cli.py - main CLI program
+- debug.py - used for debugging any part of program
+- helpers.py - contains helper methods for cli.py
+- seed.py - clears the database, then seeds it with sample data
+- company.db - the SQLite database used
 
 ## Operation
 

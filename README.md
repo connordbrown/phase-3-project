@@ -2,11 +2,20 @@
 
 AllBooks is a Python CLI application for managing bookstore chains!
 
+It uses a SQLite database to store three tables: bookstores, customers, and books. The database contains two one-to-many relationships:
+a bookstore has many books, and a customer has many books. The application contains CRUD (Create, Read, Update, and Delete) methods implemented
+in Python for each database table. The CLI makes interaction with the database simple and straightforward.
+
 ## Operation
 
 This application uses Python 3.8. It has dependencies that require a virtual environment. If the virtual environment is not already set up, use the following command:
 ```bash
 pipenv --python 3.8
+```
+
+If pipenv is not installed, use this command:
+```bash
+pip install pipenv
 ```
 
 Otherwise, install dependencies and run the virtual environment:
@@ -174,6 +183,8 @@ The Grapes of Wrath         John Steinbeck           Read Queen
 Fahrenheit 451              Ray Bradbury             Read Queen    
 ```
 
+Both the Bookstore Manager menu and Book Manager menu have nearly identical options, just for bookstores or books instead of customers.
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
@@ -182,5 +193,3 @@ to discuss what you would like to change.
 ## Authors and Acknowledgement
 
 The original application was designed and built by Connor D. Brown in 2023.
-
-This application uses modified data from the [EmojiHub API](https://github.com/cheatsnake/emojihub). The original API was created by cheatsnake.  

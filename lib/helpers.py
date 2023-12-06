@@ -5,6 +5,7 @@ from models.customer import Customer
 
 def exit_program():
     print("Goodbye!")
+    print()
     exit() 
 
 ### bookstore functions ###
@@ -120,7 +121,7 @@ def update_customer():
     print("Update a customer")
     print("-------------------")
     last_name = input("Enter the customer's last name: ")
-
+    print()
     if customer := Customer.find_by_last_name(last_name):
         try:
             first_name = input("Enter the customer's new first name: ")
@@ -215,7 +216,7 @@ def update_book():
     print("Update a book")
     print("---------------")
     title = input("Enter the book title: ")
-
+    print()
     if book := Book.find_by_title(title):
         title = input("Enter the book's new title: ")
         book.title = title

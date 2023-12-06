@@ -22,7 +22,7 @@ from helpers import (
 )
 
 def menu():
-    print("Welcome to the Big Book Business store management system!\n")
+    print("Welcome to AllBooks, the book business management system!\n")
     print("Please select an option:\n")
     print("0. Exit the program")
     print("1. Manage bookstores")
@@ -81,7 +81,7 @@ def bookstore_main():
             list_bookstore_books()
         else:
             print("Invalid choice")
-        print()
+        print("\n")
 
 def customer_main():
     while True:
@@ -105,7 +105,7 @@ def customer_main():
             list_customer_books()
         else:
             print("Invalid choice")
-        print()
+        print("\n")
 
 def book_main():
     while True:
@@ -129,7 +129,7 @@ def book_main():
             list_customers_bookstores()
         else:
             print("Invalid choice")
-        print()
+        print("\n")
 
 def main():
     print()
